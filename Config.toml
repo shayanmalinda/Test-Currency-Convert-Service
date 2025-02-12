@@ -1,0 +1,11 @@
+[currency_convert_service.netSuiteConfigs]
+restletsBaseUrl = "https://3883026-sb1.restlets.api.netsuite.com"
+accountId = "3883026_SB1"
+tokenId = "62f007696f93069feabe2cd1ddab6d240efaba1397bce73b3978abd95ee9ed7d"
+tokenSecret = "1663b6cc83a80ad35c2cf68d3fce8db3e6e75bb8eaabfee38a7f7da2b3195472"
+consumerId = "41a07ed0d2ace6f9cc023659ea99c8eb95b62deac7293fff5698ada773c4f32f"
+consumerSecret = "72d35108877d56e8b06e2a8135b342832cb5bb01420accf08217721d7f0d56a6"
+
+[currency_convert_service.netSuiteConfigs.getCurrency]
+scriptId = 350
+DeploymentId = 1

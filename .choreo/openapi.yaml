@@ -1,0 +1,445 @@
+openapi: 3.0.1
+info:
+  title: Currency Convert Service - Endpoint 9090
+  contact:
+    name: Internal Apps Team
+    email: internal-apps-group@wso2.com
+  version: v1.0
+servers:
+  - url: https://choreoapis.dev/wutu/currency-convert-service/endpoint-9090-803/v1.0
+    variables:
+      port:
+        default: '9090'
+      server:
+        default: http://localhost
+paths:
+  /convert-currency:
+    post:
+      operationId: postConvertCurrency
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConvertCurrencyPayload'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Currency'
+        '500':
+          description: InternalServerError
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerBody'
+      security:
+        - default: []
+      x-throttling-tier: Unlimited
+      x-throttling-limit:
+        requestCount: -1
+        unit: MINUTE
+      x-auth-type: Application & Application User
+components:
+  schemas:
+    ConvertCurrencyPayload:
+      required:
+        - baseCode
+        - date
+      type: object
+      properties:
+        baseCode:
+          type: string
+          enum:
+            - ZWD
+            - ZMW
+            - ZAR
+            - YER
+            - XPF
+            - XOF
+            - XDR
+            - XCD
+            - XAF
+            - WST
+            - VUV
+            - VND
+            - VEF
+            - UZS
+            - UYU
+            - USD
+            - UGX
+            - UAH
+            - TZS
+            - TWD
+            - TVD
+            - TTD
+            - TRY
+            - TOP
+            - TND
+            - TMT
+            - TJS
+            - THB
+            - SZL
+            - SYP
+            - SVC
+            - STD
+            - SRD
+            - SPL
+            - SOS
+            - SLL
+            - SHP
+            - SGD
+            - SEK
+            - SDG
+            - SCR
+            - SBD
+            - SAR
+            - RWF
+            - RUB
+            - RSD
+            - RON
+            - QAR
+            - PYG
+            - PLN
+            - PKR
+            - PHP
+            - PGK
+            - PEN
+            - PAB
+            - OMR
+            - NZD
+            - NPR
+            - NOK
+            - NIO
+            - NGN
+            - NAD
+            - MZN
+            - MYR
+            - MXN
+            - MWK
+            - MVR
+            - MUR
+            - MRO
+            - MOP
+            - MNT
+            - MMK
+            - MKD
+            - MGA
+            - MDL
+            - MAD
+            - LYD
+            - LSL
+            - LRD
+            - LKR
+            - LBP
+            - LAK
+            - KZT
+            - KYD
+            - KWD
+            - KRW
+            - KPW
+            - KMF
+            - KHR
+            - KGS
+            - KES
+            - JPY
+            - JOD
+            - JMD
+            - JEP
+            - ISK
+            - IRR
+            - IQD
+            - INR
+            - IMP
+            - ILS
+            - IDR
+            - HUF
+            - HTG
+            - HRK
+            - HNL
+            - HKD
+            - GYD
+            - GTQ
+            - GNF
+            - GMD
+            - GIP
+            - GHS
+            - GGP
+            - GEL
+            - GBP
+            - FKP
+            - FJD
+            - EUR
+            - ETB
+            - ERN
+            - EGP
+            - DZD
+            - DOP
+            - DKK
+            - DJF
+            - CZK
+            - CVE
+            - CUP
+            - CUC
+            - CRC
+            - COP
+            - CNY
+            - CLP
+            - CHF
+            - CDF
+            - CAD
+            - BZD
+            - BYR
+            - BWP
+            - BTN
+            - BSD
+            - BRL
+            - BOB
+            - BND
+            - BMD
+            - BIF
+            - BHD
+            - BGN
+            - BDT
+            - BBD
+            - BAM
+            - AZN
+            - AWG
+            - AUD
+            - ARS
+            - AOA
+            - ANG
+            - AMD
+            - ALL
+            - AFN
+            - AED
+        date:
+          type: string
+    Currency:
+      required:
+        - currencyCode
+        - exchangeRate
+      type: object
+      properties:
+        currencyCode:
+          type: string
+          enum:
+            - ZWD
+            - ZMW
+            - ZAR
+            - YER
+            - XPF
+            - XOF
+            - XDR
+            - XCD
+            - XAF
+            - WST
+            - VUV
+            - VND
+            - VEF
+            - UZS
+            - UYU
+            - USD
+            - UGX
+            - UAH
+            - TZS
+            - TWD
+            - TVD
+            - TTD
+            - TRY
+            - TOP
+            - TND
+            - TMT
+            - TJS
+            - THB
+            - SZL
+            - SYP
+            - SVC
+            - STD
+            - SRD
+            - SPL
+            - SOS
+            - SLL
+            - SHP
+            - SGD
+            - SEK
+            - SDG
+            - SCR
+            - SBD
+            - SAR
+            - RWF
+            - RUB
+            - RSD
+            - RON
+            - QAR
+            - PYG
+            - PLN
+            - PKR
+            - PHP
+            - PGK
+            - PEN
+            - PAB
+            - OMR
+            - NZD
+            - NPR
+            - NOK
+            - NIO
+            - NGN
+            - NAD
+            - MZN
+            - MYR
+            - MXN
+            - MWK
+            - MVR
+            - MUR
+            - MRO
+            - MOP
+            - MNT
+            - MMK
+            - MKD
+            - MGA
+            - MDL
+            - MAD
+            - LYD
+            - LSL
+            - LRD
+            - LKR
+            - LBP
+            - LAK
+            - KZT
+            - KYD
+            - KWD
+            - KRW
+            - KPW
+            - KMF
+            - KHR
+            - KGS
+            - KES
+            - JPY
+            - JOD
+            - JMD
+            - JEP
+            - ISK
+            - IRR
+            - IQD
+            - INR
+            - IMP
+            - ILS
+            - IDR
+            - HUF
+            - HTG
+            - HRK
+            - HNL
+            - HKD
+            - GYD
+            - GTQ
+            - GNF
+            - GMD
+            - GIP
+            - GHS
+            - GGP
+            - GEL
+            - GBP
+            - FKP
+            - FJD
+            - EUR
+            - ETB
+            - ERN
+            - EGP
+            - DZD
+            - DOP
+            - DKK
+            - DJF
+            - CZK
+            - CVE
+            - CUP
+            - CUC
+            - CRC
+            - COP
+            - CNY
+            - CLP
+            - CHF
+            - CDF
+            - CAD
+            - BZD
+            - BYR
+            - BWP
+            - BTN
+            - BSD
+            - BRL
+            - BOB
+            - BND
+            - BMD
+            - BIF
+            - BHD
+            - BGN
+            - BDT
+            - BBD
+            - BAM
+            - AZN
+            - AWG
+            - AUD
+            - ARS
+            - AOA
+            - ANG
+            - AMD
+            - ALL
+            - AFN
+            - AED
+        exchangeRate:
+          type: number
+          format: double
+    InternalServerBody:
+      required:
+        - msg
+      type: object
+      properties:
+        msg:
+          type: string
+      description: Body of the error response
+  securitySchemes:
+    default:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://test.com
+          scopes: {}
+x-wso2-disable-security: false
+x-wso2-auth-header: Authorization
+x-wso2-cors:
+  corsConfigurationEnabled: false
+  accessControlAllowOrigins:
+    - '*'
+  accessControlAllowCredentials: false
+  accessControlAllowHeaders:
+    - authorization
+    - Access-Control-Allow-Origin
+    - Content-Type
+    - SOAPAction
+    - apikey
+    - API-Key
+    - testKey
+  accessControlAllowMethods:
+    - GET
+    - PUT
+    - POST
+    - DELETE
+    - PATCH
+    - OPTIONS
+x-wso2-production-endpoints:
+  urls:
+    - http://currency-convert-service-1545242845.dp-development-finance-3122-3029276484.svc.cluster.local:9090/
+  type: http
+x-wso2-basePath: /11737422-7078-8510-1074-820892631194/wutu/currency-convert-service/endpoint-9090-803/v1.0
+x-business-owner:
+  name: Internal Apps Team
+  email: internal-apps-group@wso2.com
+x-wso2-transports:
+  - http
+  - https
+x-wso2-response-cache:
+  enabled: false
+  cacheTimeoutInSeconds: 300

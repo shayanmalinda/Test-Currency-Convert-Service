@@ -1,0 +1,29 @@
+# Copyright (c) 2025, WSO2 LLC. (https://www.wso2.com). All Rights Reserved.
+#
+# This software is the property of WSO2 LLC. and its suppliers, if any.
+# Dissemination of any information or reproduction of any material contained
+# herein in any form is strictly forbidden, unless permitted by WSO2 expressly.
+# You may not alter or remove any copyright or other notice from copies of this content.
+
+# +required The configuration file schema version
+schemaVersion: 1.1
+
+# +optional Incoming connection details for the component
+endpoints:
+  # +required Unique name for the endpoint.
+  - name: currency_convert_service
+    # +optional Display name for the endpoint.
+    displayName: Currency Convert Service
+    # +required Service section has the user service endpoint details
+    service:
+      # +optional Base path of the API that gets exposed via the endpoint.
+      basePath: /
+      # +required Numeric port value that gets exposed via the endpoint
+      port: 9090
+    # +required Type of traffic that the endpoint is accepting.
+    type: REST
+    # +optional Network level visibilities of the endpoint.
+    networkVisibilities:
+      - Organization
+    # +optional Path to the schema definition file. Defaults to wild card route if not provided
+    schemaFilePath: openapi.yaml
