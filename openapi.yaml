@@ -1,10 +1,4 @@
 openapi: 3.0.1
-info:
-  title: Currency Convert Service - Endpoint 9090
-  contact:
-    name: Internal Apps Team
-    email: internal-apps-group@wso2.com
-  version: v1.0
 servers:
   - url: https://choreoapis.dev/wutu/currency-convert-service/endpoint-9090-803/v1.0
     variables:
@@ -407,39 +401,3 @@ components:
         implicit:
           authorizationUrl: https://test.com
           scopes: {}
-x-wso2-disable-security: false
-x-wso2-auth-header: Authorization
-x-wso2-cors:
-  corsConfigurationEnabled: false
-  accessControlAllowOrigins:
-    - '*'
-  accessControlAllowCredentials: false
-  accessControlAllowHeaders:
-    - authorization
-    - Access-Control-Allow-Origin
-    - Content-Type
-    - SOAPAction
-    - apikey
-    - API-Key
-    - testKey
-  accessControlAllowMethods:
-    - GET
-    - PUT
-    - POST
-    - DELETE
-    - PATCH
-    - OPTIONS
-x-wso2-production-endpoints:
-  urls:
-    - http://currency-convert-service-1545242845.dp-development-finance-3122-3029276484.svc.cluster.local:9090/
-  type: http
-x-wso2-basePath: /11737422-7078-8510-1074-820892631194/wutu/currency-convert-service/endpoint-9090-803/v1.0
-x-business-owner:
-  name: Internal Apps Team
-  email: internal-apps-group@wso2.com
-x-wso2-transports:
-  - http
-  - https
-x-wso2-response-cache:
-  enabled: false
-  cacheTimeoutInSeconds: 300
