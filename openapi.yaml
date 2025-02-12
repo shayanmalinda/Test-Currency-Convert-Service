@@ -1,4 +1,7 @@
 openapi: 3.0.1
+info:
+  title: Currency Convert Service - Endpoint 9090
+  version: v1.0
 servers:
   - url: https://choreoapis.dev/wutu/currency-convert-service/endpoint-9090-803/v1.0
     variables:
